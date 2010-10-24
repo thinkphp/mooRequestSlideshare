@@ -64,4 +64,14 @@ In your HTML.
 
 You can view in action:
 
-- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/)
+- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/badge.html](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/badge.html
+- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/badge.php?user=stoyan](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/badge.php?user=stoyan)
+- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.php](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.php)
+- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.html](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.html)
+- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/widget.html](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/widget.html)
+
+
+### Requirements:
+
+- MooTools Core 1.3
+- MooTools More (Request.JSONP)
