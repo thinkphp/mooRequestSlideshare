@@ -20,43 +20,48 @@ In your JS.
 
        #JS
        window.addEvent('domready',function(){
-          var c = $('badge').get('class');
-          var usernamematch = /username-(\w+)/, amountmatch = /amount-(\d+)/; 
-          var username = usernamematch.exec(c);
-              username = username ? username[1] : 'stoyan';  
-          var amount = amountmatch.exec(c);
-              amount = amount ? amount[1] : '5';  
-              new Request.Slideshare(username, amount, {
-                    onSuccess: function(o) {
-                         if(o.results[0].indexOf('<error') != -1) {
-                              if(window.console){console.log(o);}
-                              var r = o.results[0]; 
-                              var clean = r.replace(/<\/?error[^>]*>/,' '); 
-                              $('badge').set('html','<h2 class="error">'+clean+'</h2>');
-                         } else {
-                              $('bd').setStyle('height','auto');
-                              if(window.console){console.log(o);}
-                              $('badge').set('html',o.results[0]);
-                              $('badge').fade('hide'); 
-                              $('badge').fade(1);
-                          }
-                     },
-                     onRequest: function(script){
-                              var span = new Element('span',{'class': 'loading'}).set('text','Loading...').inject($('badge'));
-                     }  
-               }).send();
-         });
+         //variant 1
+         var c = $('badge').get('class');
+         var usernamematch = /username-(\w+)/, amountmatch = /amount-(\d+)/; 
+         var username = usernamematch.exec(c);
+             username = username ? username[1] : 'stoyan';  
+         var amount = amountmatch.exec(c);
+             amount = amount ? amount[1] : '5';  
+             new Request.Slideshare(username, amount, {
+                 onSuccess: function(o) {
+                     if(o.results[0].indexOf('<error') != -1) {
+                        if(window.console){console.log(o);}
+                        var r = o.results[0]; 
+                        var clean = r.replace(/<\/?error[^>]*>/,' '); 
+                        $('badge').set('html','<h2 class="error">'+clean+'</h2>');
+
+                     } else {
+                        $('bd').setStyle('height','auto');
+                        if(window.console){console.log(o);}
+                        $('badge').set('html',o.results[0]);
+                        $('badge').fade('hide'); 
+                        $('badge').fade(1);
+                     }
+                 },
+                 onRequest: function(script){
+                   var span = new Element('span',{'class': 'loading'}).set('text','Loading...').inject($('badge'));
+                 }  
+            }).send();
+ 
+      //variant 2
+      //you can write less; called this method
+      $('badge2').loadSlideshare('thinkphp', 10);
+   });//end domready
 
 
 In your HTML.
 
        #HTML
-       <div id="badge" class="username-<?php echo$_GET['user'];?> amount-10"></div>       
+       <div id="badge" class="username-stoyan amount-10"></div>       
+       <div id="badge2"></div>       
 
 ### Notes:
 
 You can view in action:
 
 - [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/)
-
-- [http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.html](http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/form.html)

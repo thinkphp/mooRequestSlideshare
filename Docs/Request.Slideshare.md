@@ -93,3 +93,28 @@ Executes a JSON request.
 
 - (*Object*) This instance of Request.Slideshare.
 
+## Element Method: loadSlideshare
+
+Updates the content of an Element with the desired badge Slideshare 
+
+### Syntax:
+
+    myElem.loadSlideshare(username, amount);
+
+#### Arguments: 
+
+1. username (*String*) - the username Slideshare.com you want.
+2. amount (*integer*) - number of slides you want from user.
+
+### Returns:
+
+(*Element*) - the target Element.
+
+### Example: 
+
+    #html
+    <div id="mywidget"></div>
+ 
+    #js 
+    $('mywidget').loadLatestGitHub('stoyan', 10);
+

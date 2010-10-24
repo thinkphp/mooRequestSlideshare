@@ -12,7 +12,7 @@ if(isset($_GET['user']) && $_GET['user'] != '') {
    <title>Request.Slideshare</title>
    <link rel="stylesheet" href="style.css" type="text/css">
    <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
-   <script type="text/javascript">google.load("mootools", "1.2.4");</script>
+   <script type="text/javascript">google.load("mootools", "1.3");</script>
    <script src="Request.JSONP.js"></script>
    <script type="text/javascript" src="Request.Slideshare-yui-compressed.js"></script>
    <script type="text/javascript">
@@ -52,7 +52,14 @@ if(isset($_GET['user']) && $_GET['user'] != '') {
 <div id="doc">
 <div id="bd">
 <h2><a href="http://slideshare.com/thinkphp">My latest slides</a></h2>
-<div id="badge" class="username-<?php echo$user;?> amount-10"></div>
+
+   <div class="yui-g">
+
+     <div class="yui-u first" id="badge1">
+             <div id="badge" class="username-<?php echo$user;?> amount-10"></div>
+     </div>
+
+    </div>
 </div>
 </div>
 <div id="ft"><p>Created by @<a href="http://twitter.com/thinkphp">thinkphp</a> using <a href="http://thinkphp.ro/apps/YQL/slideshare.rss.xml">Open Data Table</a> | You can grab the source code of this demo on <a href="http://mootools.net/forge/download/Request_Slideshare/v1.0">Forge</a></p></div></div>
