@@ -51,7 +51,7 @@ if(isset($_GET['user']) && $_GET['user'] != '') {
 <h1><span>Badge</span></h1>
 <div id="doc">
 <div id="bd">
-<h2><a href="http://slideshare.com/thinkphp">My latest slides</a></h2>
+<h2><a href="http://slideshare.com/<?php echo$user;?>">My latest slides</a></h2>
 
    <div class="yui-g">
 
