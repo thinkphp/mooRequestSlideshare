@@ -33,3 +33,33 @@ Request.Slideshare = new Class({
                      this.parent(options);
         }                
 }); 
+
+Element.implement({
+        loadSlideshare: function(user, amount) {
+                        var target = this;
+                        var amount = amount || 5;
+                        if(user) {
+                           new Request.Slideshare(user, amount,{
+                                    onSuccess: function(o) {
+                                             if(o.results[0].indexOf('<error') != -1) {
+                                                  if(window.console){console.log(o);}
+                                                  var r = o.results[0]; 
+                                                  var clean = r.replace(/<\/?error[^>]*>/,' '); 
+                                                  $(target).set('html','<h2 class="error">'+clean+'</h2>');
+                                              } else {
+                                                  if(window.console){console.log(o);}
+                                                  $(target).set('html',o.results[0]);
+                                                  $(target).fade('hide');
+                                                  $(target).fade(1);
+                                              }
+                                    },
+                                    onRequest: function(script){
+                                                  if(window.console){console.log(script);}
+                                                  $(target).empty();
+                                                  new Element('div',{'class':'loading'}).set('text','Loading...').inject($(target));
+                                    } 
+                           }).send();
+                        }
+          return this; 
+        }
+});
