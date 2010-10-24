@@ -1,0 +1,7 @@
+name: Request.Slideshare
+author: thinkphp
+category: Widgets
+tags: [slideshare, slides, requestjson, xml, jsonp, opendatatable]
+docs: http://github.com/thinkphp/mooRequestSlideshare/blob/master/Docs/Request.Slideshare.md
+demo: http://thinkphp.ro/apps/js-hacks/Request.Slideshare/v1.0/
+current: v1.0
