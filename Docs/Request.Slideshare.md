@@ -116,5 +116,5 @@ Updates the content of an Element with the desired badge Slideshare
     <div id="mywidget"></div>
  
     #js 
-    $('mywidget').loadLatestGitHub('stoyan', 10);
+    $('mywidget').loadSlideshare('stoyan', 10);
 
