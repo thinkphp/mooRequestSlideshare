@@ -51,7 +51,7 @@ In your JS.
       //variant 2
       //you can write less; called this method
       $('badge2').loadSlideshare('thinkphp', 10);
-   });//end domready
+});
 
 
 In your HTML.
